@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D15FC472264A1600006315A /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D15FC462264A1600006315A /* MainViewController.mm */; };
-		9D15FC4A2264A1600006315A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D15FC482264A1600006315A /* Main.storyboard */; };
 		9D15FC4C2264A1600006315A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D15FC4B2264A1600006315A /* Assets.xcassets */; };
 		9D15FC4F2264A1600006315A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D15FC4D2264A1600006315A /* LaunchScreen.storyboard */; };
 		9D78DAFD2265A7FC00274039 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78DAFC2265A7FC00274039 /* UIKit.framework */; };
+		AB3DD7172A66B80300461C17 /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7162A66B80300461C17 /* TestContentView.swift */; };
+		AB3DD71B2A66BB1D00461C17 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD71A2A66BB1D00461C17 /* DemoApp.swift */; };
+		AB3DD71D2A66C47D00461C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD71C2A66C47D00461C17 /* AppDelegate.swift */; };
+		AB3DD71F2A66C62F00461C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */; };
+		AB3DD7212A66E5AC00461C17 /* UnityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7202A66E5AC00461C17 /* UnityManager.swift */; };
+		AB3DD7262A67E55E00461C17 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEB54782A4304D0005A263F /* UnityFramework.framework */; };
+		AB3DD7282A68162300461C17 /* InputRedirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7272A68162300461C17 /* InputRedirectionView.swift */; };
+		AB3DD72E2A683DAE00461C17 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD72D2A683DAE00461C17 /* Logger.swift */; };
 		AB6DCE282A43074B00353135 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB6DCE262A43074B00353135 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABEB54762A430450005A263F /* SwiftBridgeDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEB54752A430450005A263F /* SwiftBridgeDemo.swift */; };
 		ABEB547E2A4304F0005A263F /* SwiftAsyncBridge in Frameworks */ = {isa = PBXBuildFile; productRef = ABEB547D2A4304F0005A263F /* SwiftAsyncBridge */; };
@@ -33,16 +39,20 @@
 
 /* Begin PBXFileReference section */
 		9D15FC3F2264A1600006315A /* NativeiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D15FC462264A1600006315A /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
-		9D15FC492264A1600006315A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D15FC4B2264A1600006315A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D15FC4E2264A1600006315A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D15FC502264A1600006315A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D78DAFC2265A7FC00274039 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB3DD7162A66B80300461C17 /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
+		AB3DD71A2A66BB1D00461C17 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
+		AB3DD71C2A66C47D00461C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB3DD7202A66E5AC00461C17 /* UnityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityManager.swift; sourceTree = "<group>"; };
+		AB3DD7222A67E29B00461C17 /* NativeiOSApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NativeiOSApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB3DD7272A68162300461C17 /* InputRedirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRedirectionView.swift; sourceTree = "<group>"; };
+		AB3DD72D2A683DAE00461C17 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AB6DCE262A43074B00353135 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABEB54742A430450005A263F /* NativeiOSApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeiOSApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		ABEB54752A430450005A263F /* SwiftBridgeDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBridgeDemo.swift; sourceTree = "<group>"; };
-		ABEB54772A430492005A263F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ABEB54782A4304D0005A263F /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3DD7262A67E55E00461C17 /* UnityFramework.framework in Frameworks */,
 				9D78DAFD2265A7FC00274039 /* UIKit.framework in Frameworks */,
 				ABEB547E2A4304F0005A263F /* SwiftAsyncBridge in Frameworks */,
 			);
@@ -79,14 +90,18 @@
 		9D15FC412264A1600006315A /* NativeiOSApp */ = {
 			isa = PBXGroup;
 			children = (
-				9D15FC462264A1600006315A /* MainViewController.mm */,
-				9D15FC482264A1600006315A /* Main.storyboard */,
 				9D15FC4B2264A1600006315A /* Assets.xcassets */,
 				9D15FC4D2264A1600006315A /* LaunchScreen.storyboard */,
 				9D15FC502264A1600006315A /* Info.plist */,
 				ABEB54752A430450005A263F /* SwiftBridgeDemo.swift */,
-				ABEB54742A430450005A263F /* NativeiOSApp-Bridging-Header.h */,
-				ABEB54772A430492005A263F /* AppDelegate.h */,
+				AB3DD7162A66B80300461C17 /* TestContentView.swift */,
+				AB3DD71A2A66BB1D00461C17 /* DemoApp.swift */,
+				AB3DD71C2A66C47D00461C17 /* AppDelegate.swift */,
+				AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */,
+				AB3DD7202A66E5AC00461C17 /* UnityManager.swift */,
+				AB3DD7272A68162300461C17 /* InputRedirectionView.swift */,
+				AB3DD7222A67E29B00461C17 /* NativeiOSApp-Bridging-Header.h */,
+				AB3DD72D2A683DAE00461C17 /* Logger.swift */,
 			);
 			path = NativeiOSApp;
 			sourceTree = "<group>";
@@ -168,7 +183,6 @@
 			files = (
 				9D15FC4F2264A1600006315A /* LaunchScreen.storyboard in Resources */,
 				9D15FC4C2264A1600006315A /* Assets.xcassets in Resources */,
-				9D15FC4A2264A1600006315A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,22 +193,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D15FC472264A1600006315A /* MainViewController.mm in Sources */,
+				AB3DD7282A68162300461C17 /* InputRedirectionView.swift in Sources */,
+				AB3DD71F2A66C62F00461C17 /* SceneDelegate.swift in Sources */,
+				AB3DD71D2A66C47D00461C17 /* AppDelegate.swift in Sources */,
+				AB3DD71B2A66BB1D00461C17 /* DemoApp.swift in Sources */,
 				ABEB54762A430450005A263F /* SwiftBridgeDemo.swift in Sources */,
+				AB3DD7172A66B80300461C17 /* TestContentView.swift in Sources */,
+				AB3DD7212A66E5AC00461C17 /* UnityManager.swift in Sources */,
+				AB3DD72E2A683DAE00461C17 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9D15FC482264A1600006315A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D15FC492264A1600006315A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D15FC4D2264A1600006315A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

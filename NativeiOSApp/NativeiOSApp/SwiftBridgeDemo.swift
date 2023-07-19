@@ -11,16 +11,13 @@ import UIKit
 import SwiftAsyncBridge
 import OSLog
 
-extension Logger {
-    private static var subsystem = Bundle.main.bundleIdentifier!
-    static let bridge = Logger(subsystem: subsystem, category: "swift_bridge_demo")
-}
-
 private enum ImplementationError : Error {
     case tooBig
 }
 
-@objc public class SwiftBridgeDemo : NSObject {
+public class SwiftBridgeDemo {
+    
+    public static let instance = SwiftBridgeDemo()
     
     private static let testSeparator = "\n-------------------\n"
     
@@ -28,6 +25,16 @@ private enum ImplementationError : Error {
     private let workflowPerformer : BridgeWorkflowPerformer
     private let workflowRegister : BridgeWorkflowRegister
     private var counter = 0
+    
+    private var _colorTask : Task<VoidResult, Error>?
+    
+    func switchColor(red: Float, green: Float, blue: Float, duration: TimeInterval) {
+        _colorTask?.cancel()
+        _colorTask = Task {
+            let payload = ColorPayload(red: red, green: green, blue: blue, duration: Float(duration))
+            return try await workflowPerformer.perform(procedure: Procedures.cubeColor, payload: payload)
+        }
+    }
     
     var incrementedCounter : Int {
         counter += 1
@@ -42,15 +49,15 @@ private enum ImplementationError : Error {
         static let immediateGreeting = "/greeting/immediate"
         static let delayedGreeting = "/greeting/delayed"
         static let errorGreeting = "/greeting/error"
+        static let cubeColor = "/cube/color"
     }
     
-    public override init() {
+    public init() {
         let messenger = UnityBridgeMessenger(gameObject: "Bridge", method: "OnBridgeMessage")
-        let listener = DefaultBridgeListener()
+        let listener = UnityManager.instance
         bridge = Bridge(messenger: messenger, listener: listener)
         workflowPerformer = BridgeWorkflowPerformer(bridge: bridge)
         workflowRegister = BridgeWorkflowRegister(bridge: bridge)
-        super.init()
         registerImplementations()
     }
     
@@ -182,19 +189,25 @@ class UnityBridgeMessenger : BridgeMessenger {
     func sendMessage(path: String, content: String) throws {
         let payload = BridgeMessage(path: path, content: content)
         let message = String(decoding: try encoder.encode(payload), as: UTF8.self)
-        Task { @MainActor in
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                throw UnityBridgeMessengerError.notInitialized
-            }
-            appDelegate.sendMessageToGO(withName: gameObject, functionName: method, message: message)
-        }
+        UnityManager.instance.sendUnityMessage(gameObject, method: method, body: message)
     }
+}
+
+struct VoidResult : Codable {
+    
 }
 
 struct TestPayload : Codable {
     var name : String
     var number : Int
     var duration : Double
+}
+
+struct ColorPayload : Codable {
+    var red : Float
+    var green : Float
+    var blue : Float
+    var duration : Float
 }
 
 struct TestResult : Codable {

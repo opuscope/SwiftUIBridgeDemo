@@ -64,6 +64,8 @@ class NativeBridgeMessenger : IBridgeMessenger
 
 public class UnityBridgeDemo : MonoBehaviour
 {
+    [SerializeField] private Renderer _cubeRenderer;
+
     private const string TEST_SEPARATOR = "\n----------------------------\n\n";
     
     private BroadcastingBridgeListener _bridgeListener;
@@ -100,6 +102,27 @@ public class UnityBridgeDemo : MonoBehaviour
         }
     }
 
+    struct VoidResult
+    {
+        public static VoidResult Default = default;
+    }
+    
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
+    class ColorPayload
+    {
+        public float Duration;
+        public float Red;
+        public float Green;
+        public float Blue;
+
+        public Color Color => new Color(Red, Green, Blue, 1f);
+
+        public override string ToString()
+        {
+            return $"{GetType().Name} {nameof(Duration)} {Duration} {nameof(Red)} {Red} {nameof(Green)} {Green} {nameof(Blue)} {Blue}";
+        }
+    }
+
 
     private struct Paths
     {
@@ -111,6 +134,7 @@ public class UnityBridgeDemo : MonoBehaviour
         public const string ImmediateGreeting = "/greeting/immediate";
         public const string DelayedGreeting = "/greeting/delayed";
         public const string ErrorGreeting = "/greeting/error";
+        public const string CubeColor = "/cube/color";
     }
 
     protected void Awake()
@@ -157,6 +181,13 @@ public class UnityBridgeDemo : MonoBehaviour
         {
             await UniTask.Delay(TimeSpan.FromSeconds(payload.Duration), cancellationToken: token);
             throw new Exception("Error Greeting");
+        });
+        
+        _workflowRegister.Register<ColorPayload, VoidResult>(Procedures.CubeColor, async (payload, token) =>
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(payload.Duration), cancellationToken: token);
+            _cubeRenderer.material.color = payload.Color;
+            return VoidResult.Default;
         });
     }
 
