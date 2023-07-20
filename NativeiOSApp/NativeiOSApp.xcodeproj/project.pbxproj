@@ -16,8 +16,9 @@
 		AB3DD71F2A66C62F00461C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */; };
 		AB3DD7212A66E5AC00461C17 /* UnityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7202A66E5AC00461C17 /* UnityManager.swift */; };
 		AB3DD7262A67E55E00461C17 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEB54782A4304D0005A263F /* UnityFramework.framework */; };
-		AB3DD7282A68162300461C17 /* InputRedirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7272A68162300461C17 /* InputRedirectionView.swift */; };
+		AB3DD7282A68162300461C17 /* UIInputRedirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7272A68162300461C17 /* UIInputRedirectionView.swift */; };
 		AB3DD72E2A683DAE00461C17 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD72D2A683DAE00461C17 /* Logger.swift */; };
+		AB3DD7322A69774200461C17 /* UnityInputRedirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DD7312A69774200461C17 /* UnityInputRedirectionView.swift */; };
 		AB6DCE282A43074B00353135 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB6DCE262A43074B00353135 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABEB54762A430450005A263F /* SwiftBridgeDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEB54752A430450005A263F /* SwiftBridgeDemo.swift */; };
 		ABEB547E2A4304F0005A263F /* SwiftAsyncBridge in Frameworks */ = {isa = PBXBuildFile; productRef = ABEB547D2A4304F0005A263F /* SwiftAsyncBridge */; };
@@ -49,8 +50,9 @@
 		AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB3DD7202A66E5AC00461C17 /* UnityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityManager.swift; sourceTree = "<group>"; };
 		AB3DD7222A67E29B00461C17 /* NativeiOSApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NativeiOSApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		AB3DD7272A68162300461C17 /* InputRedirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRedirectionView.swift; sourceTree = "<group>"; };
+		AB3DD7272A68162300461C17 /* UIInputRedirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInputRedirectionView.swift; sourceTree = "<group>"; };
 		AB3DD72D2A683DAE00461C17 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AB3DD7312A69774200461C17 /* UnityInputRedirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityInputRedirectionView.swift; sourceTree = "<group>"; };
 		AB6DCE262A43074B00353135 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEB54752A430450005A263F /* SwiftBridgeDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBridgeDemo.swift; sourceTree = "<group>"; };
 		ABEB54782A4304D0005A263F /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +101,8 @@
 				AB3DD71C2A66C47D00461C17 /* AppDelegate.swift */,
 				AB3DD71E2A66C62F00461C17 /* SceneDelegate.swift */,
 				AB3DD7202A66E5AC00461C17 /* UnityManager.swift */,
-				AB3DD7272A68162300461C17 /* InputRedirectionView.swift */,
+				AB3DD7312A69774200461C17 /* UnityInputRedirectionView.swift */,
+				AB3DD7272A68162300461C17 /* UIInputRedirectionView.swift */,
 				AB3DD7222A67E29B00461C17 /* NativeiOSApp-Bridging-Header.h */,
 				AB3DD72D2A683DAE00461C17 /* Logger.swift */,
 			);
@@ -193,10 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3DD7282A68162300461C17 /* InputRedirectionView.swift in Sources */,
+				AB3DD7282A68162300461C17 /* UIInputRedirectionView.swift in Sources */,
 				AB3DD71F2A66C62F00461C17 /* SceneDelegate.swift in Sources */,
 				AB3DD71D2A66C47D00461C17 /* AppDelegate.swift in Sources */,
 				AB3DD71B2A66BB1D00461C17 /* DemoApp.swift in Sources */,
+				AB3DD7322A69774200461C17 /* UnityInputRedirectionView.swift in Sources */,
 				ABEB54762A430450005A263F /* SwiftBridgeDemo.swift in Sources */,
 				AB3DD7172A66B80300461C17 /* TestContentView.swift in Sources */,
 				AB3DD7212A66E5AC00461C17 /* UnityManager.swift in Sources */,

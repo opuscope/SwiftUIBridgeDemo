@@ -35,7 +35,7 @@ class UnityManager: UIResponder, UnityFrameworkListener, NativeCallsProtocol, Br
     private var ufw : UnityFramework!
     
     var launchOpts : [UIApplication.LaunchOptionsKey: Any]?
-    var inputRedirectionView : InputRedirectionView?
+    var inputRedirectionView : UIInputRedirectionView?
  
     func showUnity() {
         if(self.unityIsInitialized() == false) {
@@ -93,8 +93,8 @@ class UnityManager: UIResponder, UnityFrameworkListener, NativeCallsProtocol, Br
         let levelDescription = "\(ufw.appController().window.windowLevel.rawValue)"
         Logger.bridge.log("UnityManager initUnityWindow with level \(levelDescription)")
         
-        if let inputRedirectionView {
-            inputRedirectionView.targetView = ufw.appController().window.rootViewController?.view
+        if let inputRedirectionView, let unityView = ufw.appController().rootViewController.view {
+            inputRedirectionView.targetView = unityView
         }
     }
 

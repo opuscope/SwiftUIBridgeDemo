@@ -27,27 +27,32 @@ struct BlueButton: ButtonStyle {
 struct TestContentView: View {
     let duration : TimeInterval = 5
     var body: some View {
-      VStack {
-          Spacer()
-          HStack {
-              Button("Red") {
-                  SwiftBridgeDemo.instance.switchColor(red: 1, green: 0, blue: 0, duration: duration)
-              }.buttonStyle(BlueButton())
-              Button("Green") {
-                  SwiftBridgeDemo.instance.switchColor(red: 0, green: 1, blue: 0, duration: duration)
-              }.buttonStyle(BlueButton())
-              Button("Blue") {
-                  SwiftBridgeDemo.instance.switchColor(red: 0, green: 0, blue: 1, duration: duration)
-              }.buttonStyle(BlueButton())
-          }
-          HStack {
-              Button("Show Unity") {
-                  UnityManager.instance.showUnity()
-              }.buttonStyle(BlueButton())
-              Button("Unload Unity") {
-                  UnityManager.instance.unloadUnity()
-              }.buttonStyle(BlueButton())
-          }
-      }.background(Color.clear)
+        ZStack {
+            UnityInputRedirectionView()
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                HStack {
+                  Button("Red") {
+                      SwiftBridgeDemo.instance.switchColor(red: 1, green: 0, blue: 0, duration: duration)
+                  }.buttonStyle(BlueButton())
+                  Button("Green") {
+                      SwiftBridgeDemo.instance.switchColor(red: 0, green: 1, blue: 0, duration: duration)
+                  }.buttonStyle(BlueButton())
+                  Button("Blue") {
+                      SwiftBridgeDemo.instance.switchColor(red: 0, green: 0, blue: 1, duration: duration)
+                  }.buttonStyle(BlueButton())
+                }
+                HStack {
+                  Button("Show Unity") {
+                      UnityManager.instance.showUnity()
+                  }.buttonStyle(BlueButton())
+                  Button("Unload Unity") {
+                      UnityManager.instance.unloadUnity()
+                  }.buttonStyle(BlueButton())
+                }
+            }.background(Color.clear)
+        }
+
     }
 }

@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
-class InputRedirectionView : UIView {
+class UIInputRedirectionView : UIView {
+    
     var targetView: UIView?
+    
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let hitView = super.hitTest(point, with: event),
            hitView != self {
