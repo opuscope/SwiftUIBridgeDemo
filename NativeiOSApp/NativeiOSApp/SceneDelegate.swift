@@ -24,36 +24,14 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         
         Logger.bridge.log("SceneDelegate willConnectTo \(session)")
         
-        // https://pavankataria.medium.com/how-to-programmatically-setup-your-app-with-scene-delegate-in-swift-b0aab1949
-        
         let window = UIWindow(windowScene: windowScene)
         window.windowLevel = UIWindow.Level(uiWindowLevel)
         window.backgroundColor = UIColor.clear;
         window.isOpaque = false
         
-        //let rootViewController = UIViewController()
-        //rootViewController.view.isOpaque = false
-        //rootViewController.view.backgroundColor = UIColor.clear;
-        //rootViewController.view.addSubview(inputRedirectionView)
-        
         let hostingViewController = UIHostingController(rootView: TestContentView())
         hostingViewController.view.isOpaque = false
         hostingViewController.view.backgroundColor = UIColor.clear;
-        
-        // UIHostingController view is of type _UIHostingView<TestContentView> so can't be subclassed for transparency
-        
-        
-        //let inputRedirectionView = InputRedirectionView()
-        //UnityManager.instance.inputRedirectionView = inputRedirectionView
-        //inputRedirectionView.frame = hostingViewController.view.bounds
-        //inputRedirectionView.isOpaque = false
-        //inputRedirectionView.backgroundColor = UIColor.clear
-        //hostingViewController.view.addSubview(inputRedirectionView)
-        //hostingViewController.view.sendSubviewToBack(inputRedirectionView)
-        
-        //rootViewController.addChild(hostingViewController)
-        //rootViewController.view.addSubview(hostingViewController.view)
-        //hostingViewController.didMove(toParent: rootViewController)
         
         window.rootViewController = hostingViewController
         self.window = window

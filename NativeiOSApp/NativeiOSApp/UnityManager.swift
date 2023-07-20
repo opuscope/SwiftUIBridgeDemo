@@ -93,6 +93,8 @@ class UnityManager: UIResponder, UnityFrameworkListener, NativeCallsProtocol, Br
         let levelDescription = "\(ufw.appController().window.windowLevel.rawValue)"
         Logger.bridge.log("UnityManager initUnityWindow with level \(levelDescription)")
         
+        ufw.appController().window.windowLevel = UIWindow.Level(-1)
+        
         if let inputRedirectionView, let unityView = ufw.appController().rootViewController.view {
             inputRedirectionView.targetView = unityView
         }
